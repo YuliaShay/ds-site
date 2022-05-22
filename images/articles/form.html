@@ -1,0 +1,99 @@
+<style>
+#form{
+	//height: 70%;	
+	//background-color: #98d4f3;
+	background-color: rgb(26,186,255);
+	//overflow: hidden;
+	position: relative;
+	width: 50%;
+	margin: auto;
+	border-radius: 20px;
+	
+	
+}
+form#form{
+	//margin: 0 auto;
+	//width: 500px;
+	padding: 30px;
+	color: white;
+	position: relative;
+	
+	
+	
+}
+label, input.inp_feedback, textarea{
+	display: block;	
+}
+input.inp_feedback,input#but_feedback, textarea{
+	width: 80%;	
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	padding: 5px;
+	font-family: 'Sniglet', cursive;
+	font-size: 1em;
+	color: #676767;
+	transition: border 0.5s;
+	-webkit-transition: border 0.5s;
+	-moz-transition: border 0.5s;
+	-o-transition: border 0.5s;
+	//border: solid 3px #98d4f3;	
+	border: solid 3px rgb(130,218,255);
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	
+}
+input.inp_feedback:focus, textarea:focus{
+	//border: solid 3px #77bde0;	
+	border: solid 3px rgb(64,180,7);
+}
+
+textarea{
+	height: 100px;	
+	resize: none; 
+	overflow: auto;
+}
+input[type="submit"]#but_feedback{
+	//background-color: #F90;
+	background-color: rgb(255,91,145);
+	color: white;
+	height: 30px;
+	cursor: pointer;
+	margin-top: 20px;
+	font-size: 0.9em;
+	font-family: 'Sniglet', cursive;
+	-webkit-transition: background-color 0.5s;
+	-moz-transition: background-color 0.5s;
+	-o-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+	border: none;
+}
+input[type="submit"]#but_feedback:hover{
+	//background-color: #e58f0e;
+	background-color: rgb(255,140,177);
+}
+label{
+	//font-size: 1.5em;
+	//margin-top: 20px;
+	//padding-left: 20px;
+	font: 20px Comic Sans MS;
+}
+
+
+</style>
+
+
+<form id="form" action="php/send_msg.php" method="post">
+
+    <legend></legend>
+    <p><label for="name">Имя <em></em></label><input type="text" class="inp_feedback" name="name" required /></p>
+    <p><label for="email">E-mail</label><input type="email" name="email" class="inp_feedback" required /></p>
+	<p><label for="message">Сообщение</label>
+	<textarea id="message" name="message" required></textarea>
+	
+	
+	<div class="g-recaptcha" data-sitekey="6Lel-hgUAAAAAJ9ObSzx80W0iyerUGfZtDO2bI8-"></div>
+
+<p><input type="submit" value="Отправить" id="but_feedback" /></p>
+</form>

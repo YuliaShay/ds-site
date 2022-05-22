@@ -1,0 +1,125 @@
+<html>
+<head>
+<style>
+.button{
+	border: none;
+	background-color:rgb(240,240,240) ;
+    padding: 0px 1%;
+    //text-align: center;
+    text-decoration: none;
+    //display: block;
+    font-size: 20px;
+	float: left;
+	//display:inline-block;
+
+	color: #9C9797;
+	height: 100%;
+}
+
+.button:hover {
+    background-color:  #e7e7e7;
+    color: white;
+}
+#rotator{
+	text-align:center;
+	width:100%; 
+	height:60%;
+	//background-color: blue;
+	position: absolute;
+	display: none;
+	//display:inline-block;
+	}
+#img_rotator{
+//display:inline-block;
+	float: left; 
+	height:100%;
+	width: auto; 
+	}	
+.wrapper_rotator{
+	width: 15%;
+	float:left;
+	//display:inline-block;
+	background-color:rgba(255,255,255,0.7);
+	height: 100%;
+	}
+#photos{
+	clear: both;
+}
+#photos >img{
+	width: 200px; 
+	height: auto;}
+#w{
+	height:100%;
+	margin:30px;}
+.photo {
+	margin:5px;}
+</style>
+
+
+<script type="text/javascript">
+	var arr=new Array("images/galerea/1.jpg","images/galerea/2.jpg","images/galerea/3.jpg","images/galerea/4.jpg","images/galerea/5.jpg","images/galerea/6.jpg","images/galerea/7.jpg");
+	var i=0;
+	function left(){
+		var image=document.getElementById("img_rotator");
+		i--;
+		if (i<0) i=arr.length-1;
+		image.src=arr[i];
+	}
+	
+	function right(){
+		var image=document.getElementById("img_rotator");
+		i++;
+		if (i==arr.length) i=0;
+		image.src=arr[i];
+	}
+	
+	 function Hide(element_id) {
+                //Если элемент с классом element_id существует
+                if (document.getElementById(element_id)) { 
+                    //Записываем ссылку на элемент в переменную obj
+                    var obj = document.getElementById(element_id); 
+					if (obj.style.display = "block") obj.style.display = "none";
+
+                }
+                //Если элемент с id-шником element_id не найден, то выводим сообщение
+                else alert("Элемент с id: " + element_id + " не найден!"); 
+            } 
+	function Show(element_id,img_src,img_rot){
+		var obj = document.getElementById(element_id); 
+		if (obj.style.display = "none") obj.style.display = "block";
+		var image=document.getElementById(img_rot);
+		image.src=img_src;		
+	}	
+</script>
+</head>
+<body>
+<div id="w">
+	<div id="rotator" >
+			<div class="wrapper_rotator" onclick="Hide('rotator')"></div>
+			
+			<div class="button" onclick="left()"> < </div>
+			
+			<!--<input class="button" type="button" name="left" value="<" onclick="left()"/>-->
+			<script type = 'text/javascript'>
+					document.write("<img id = 'img_rotator' src = '" + arr[0] + "' alt = ''  />");
+			</script>
+			
+			<div class="button" onclick="right()"> < </div>
+			<!--<input class="button" type="button" name="right" value=">" onclick="right()"/>-->
+			<div class="wrapper_rotator" onclick="Hide('rotator')"></div>
+	</div>
+	<div id="photos">
+		<img src="images/galerea/1.jpg" class="photo" onclick = "Show('rotator',this.src,'img_rotator')">
+		<img src="images/galerea/2.jpg" class="photo" onclick = "Show('rotator',this.src,'img_rotator')">
+		<img src="images/galerea/3.jpg" class="photo" onclick = "Show('rotator',this.src,'img_rotator')">
+		<img src="images/galerea/4.jpg" class="photo" onclick = "Show('rotator',this.src,'img_rotator')">
+		<img src="images/galerea/5.jpg" class="photo" onclick = "Show('rotator',this.src,'img_rotator')">
+		<img src="images/galerea/6.jpg" class="photo" onclick = "Show('rotator',this.src,'img_rotator')">
+		<img src="images/galerea/7.jpg" class="photo" onclick = "Show('rotator',this.src,'img_rotator')">
+	
+	</div>
+
+</div>
+</body>
+
+</html>

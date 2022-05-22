@@ -1,0 +1,46 @@
+<div id="wrapper_aside">
+<div class="aside">
+	<h4 class="aside_section">Задайте нам вопрос!</h4>
+	<div id="go_to_feedback">
+		<img class="aside_img" src="images/aside/bird.png"/>
+		<p>Если у вас есть вопрос, вы можете связаться с нами</p>
+		<div id="go_to_feedback_btn"><a href="feedback.php">Перейти</a></div>
+	</div>
+	<hr>
+	
+	<h4 class="aside_section">Опрос</h4>
+	<?php include('vote.php'); ?>
+	<hr>
+	<h4 class="aside_section">Полезные ссылки</h4>
+
+		<div id="block_on_aside_baners">
+			<div id="baners"><!--блок ссылок на сторонние сайты --> 
+				<div class="baner">
+					<a target="_blank" href="http://goo.gl/CDixl6">
+					<img src="../images/baners/1.png" border="0" width="200" height="auto" /></a>
+				</div>
+
+				<div class="baner">
+					<a target="_blank" href="http://chel-edu.ru/bc.php?0.2121025821&id=52">
+					<img src="../images/baners/2.gif" border="0" width="200" height="auto"></a>
+				</div>	
+				<div class="baner">
+					<a target="_blank" href="http://chel-edu.ru/bc.php?0.1415079717&id=26">
+					<img src="../images/baners/3.gif" width="200" height="auto"></a>
+				</div>	
+			</div>
+		</div>
+	<hr>
+	<h4 class="aside_section">Вход</h4>
+
+		<div id="block_on_aside_admin">
+			<form id="adm_login" action="login.php" method="post"><p></p><!--форма входа для администратора -->
+				<input type="text" name="a_login" placeholder="Логин" required/>
+				<input type="password" name="a_psw" placeholder="Пароль" required />
+				<input type="submit" name="a_sub" value="Войти">
+			</form>
+		</div>
+
+</div>
+</div>
+	
